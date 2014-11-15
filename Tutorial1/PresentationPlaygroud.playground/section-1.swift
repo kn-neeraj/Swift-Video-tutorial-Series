@@ -78,6 +78,9 @@ println(name5.firstName)
 /* The idea to think of structs as value types and classes as reference types.
  * In structure if you assign a constant a structure object you cannot assign a new structure object to this constant and also you cant change its property values.
  * In Classes if you assign a constant a class object then that constant reference cant be assigned to any new class object but that objects property values could be changes.
+
+- address- street ,house no etc, phone number (country code, actual number)-?
+- Person - name,address,phonenumber should be of type class?
  */
 
 // Automatic bridging b/w Swift and Objective C
@@ -101,7 +104,7 @@ println(nameVar.firstName)
 
  // classes - are reference types.
 let name6: PersonName = name5 // both references are pointing to same reference.
-name5.firstName = "Mr.Neeraj"
+name5.firstName = "Mr.Neeraj"; // Find out why without space error?
 println(name6.firstName)
  
  // Tuples
@@ -128,7 +131,7 @@ for i in 2..<5 {
 }
 println()
 
-for i in "swift" {
+for i in "123" {
     print(i)
 }
 println()
@@ -185,20 +188,24 @@ default :
 
 var str1: String? // Define a optional using ?.
 println("Str1:\(str1)")
-str1 = "Hello people at the Swift introduction"
+//str1 = "Hello people at the Swift introduction"
 println(str1)
 //var str0 = str1 + "thanks people"
-var str2 = str1! + "thanks people" // forced unwrap.you know there is a value.
-println("Str2 is : \(str2)")
+//var str2 = str1! + "thanks people" // forced unwrap.you know there is a value.
+//println("Str2 is : \(str2)")
 // What if the server sends you something and you try to force unwrap it.
 
 if let uwStr = str1 { // If str1 optional has a valid string value it will unwrap it and assign to uwStr and go inside this if condition.Here you don't need to force unwrapt str1 again you can just use uwStr as a normal variable.
     println(uwStr)
 }
+else {
+    println("Oops nil!!!")
+}
 
 // Implicit unwrapping.
 
-var str3: String! = "Hello"
+var str3: String! = "Hello" // optional
+
 var str4 = str3 + "Thanks people" // if you still want to check put == nil condition.
 println(str3)
 
@@ -251,6 +258,9 @@ println(dict1[2]) // Optional?? because you can try to get a value against key w
 
 if let uwValue = dict1[2] {
     println(uwValue) // unwrapped value.
+}
+    else {
+    // I have wrong key computed.
 }
 
 if let uwValue = dict1[4] {
